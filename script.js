@@ -1,138 +1,197 @@
-// ============================================
+// ======================================================
+// FlexiSAF Frontend Training Dashboard
+// Week 1 Deliverable
+// Demonstrates:
+// - let & const
+// - Objects
+// - Arrays
+// - Arrow Functions
+// - forEach()
+// - map()
+// - filter()
+// - reduce()
+// - splice()
+// ======================================================
+
+  
+
+  
+// =========================
 // ES6 VARIABLES
+// =========================
 
 const company = "FlexiSAF";
-let week = 1;
+let trainingWeek = 1;
 
 console.log(`Welcome to ${company}`);
-console.log(`Frontend Training - Week ${week}`);
+console.log(`Frontend Development - Week ${trainingWeek}`);
 
-week = 2;
+trainingWeek = 2;
 
-
-// ============================================
-// STUDENT OBJECTS (Objects + Arrays)
-// ============================================
+  
+  
+ 
+// =========================
+// STUDENT DATA (Objects)
+// =========================
 
 const students = [
+
     {
         name: "Umar",
         department: "Computer Engineering",
         score: 80
     },
+
     {
         name: "Abdultariq",
         department: "Software Engineering",
         score: 72
     },
+
     {
         name: "Hajara",
         department: "Computer Science",
         score: 95
     },
+
     {
         name: "Anisa",
         department: "Software Engineering",
         score: 50
     },
+
     {
         name: "Usman",
         department: "Software Engineering",
         score: 80
     },
+
     {
         name: "Musa",
         department: "Computer Science",
         score: 44
     }
+
 ];
+     
+ 
 
-
-// ============================================
-// ARROW FUNCTION
-// ============================================
-
-
+// =========================
+// Helper Function
+// Displays HTML
+// =========================
 
 const display = (id, content) => {
+
     document.getElementById(id).innerHTML = content;
+
 };
 
-
-// ============================================
-// HELPER FUNCTIONS
-// ============================================
+     
+// =========================
+// Grade Calculator
+// =========================
 
 const getGrade = (score) => {
 
-    if (score >= 70) return "A";
-    if (score >= 60) return "B";
-    if (score >= 50) return "C";
-    if (score >= 45) return "D";
+    if (score >= 70) {
+
+        return "A";
+
+    }
+
+    else if (score >= 60) {
+
+        return "B";
+
+    }
+
+    else if (score >= 50) {
+
+        return "C";
+
+    }
+
+    else if (score >= 45) {
+
+        return "D";
+
+    }
 
     return "F";
 
 };
+   
+ 
+
+// =========================
+// Pass / Fail
+// =========================
 
 const getStatus = (score) => {
 
     return score >= 70 ? "PASS" : "FAIL";
 
 };
+  
 
 
-// ============================================
+ 
+  
+
+// =========================
 // forEach()
-// Display Student Cards
-// ============================================
+// Display Students
+// =========================
 
-let studentHTML = "";
-
+let studentCards = "";
 
 students.forEach(student => {
 
-    studentHTML += `
+    studentCards += `
 
-        <div class="student-card">
+    <div class="student-card">
 
-            <h3>${student.name}</h3>
+        <h3>${student.name}</h3>
 
-            <p><strong>Department:</strong> ${student.department}</p>
+        <p><strong>Department:</strong> ${student.department}</p>
 
-            <p><strong>Score:</strong> ${student.score}</p>
+        <p><strong>Score:</strong> ${student.score}%</p>
 
-            <p><strong>Grade:</strong> ${getGrade(student.score)}</p>
+        <p><strong>Grade:</strong> ${getGrade(student.score)}</p>
 
-            <span class="${student.score >= 70 ? "pass" : "fail"}">
+        <span class="${student.score >= 70 ? "pass" : "fail"}">
 
-                ${getStatus(student.score)}
+            ${getStatus(student.score)}
 
-            </span> 
+        </span>
 
-            <div class="progress">
+        <div class="progress">
 
-                <div
-                    class="progress-bar"
-                    style="width:${student.score}%"
-                ></div>
- 
+            <div
+                class="progress-bar"
+                style="width:${student.score}%">
+
+                ${student.score}%
+
             </div>
 
         </div>
+
+    </div>
 
     `;
 
 });
 
-display("students", studentHTML);  
+display("students", studentCards);
 
-
-
-
-// ============================================
+    
+      
+// =========================
 // map()
-// Convert Names to Uppercase
-// ============================================
+// =========================
 
 const uppercaseStudents = students.map((student, index) => {
 
@@ -141,18 +200,25 @@ const uppercaseStudents = students.map((student, index) => {
 });
 
 display(
+
     "uppercase",
+
     uppercaseStudents.join("<br>")
+
 );
 
+  
 
 
-
-// ============================================
+// =========================
 // filter()
-// Passed Students
+// =========================
 
-const passedStudents = students.filter(student => student.score >= 70);
+const passedStudents = students.filter(student => {
+
+    return student.score >= 70;
+
+});
 
 let passedHTML = "";
 
@@ -160,9 +226,11 @@ passedStudents.forEach(student => {
 
     passedHTML += `
 
-        🟢 <strong>${student.name}</strong>
+        ✅ ${student.name}
 
-        (${student.score})<br>
+        (${student.score}%)
+
+        <br>
 
     `;
 
@@ -173,109 +241,113 @@ display("passed", passedHTML);
 
 
 
-// ============================================
+// =========================
 // reduce()
-// Average Score
+// =========================
 
+const totalScore = students.reduce((sum, student) => {
 
-const totalScore = students.reduce((total, student) => {
-
-    return total + student.score;
+    return sum + student.score;
 
 }, 0);
 
 const averageScore = (totalScore / students.length).toFixed(2);
 
-const highestScore = Math.max(...students.map(student => student.score));
+const highestScore = Math.max(
 
-const lowestScore = Math.min(...students.map(student => student.score));
+    ...students.map(student => student.score)
 
-display( 
+);
+
+const lowestScore = Math.min(
+
+    ...students.map(student => student.score)
+
+);
+
+
+// Display reduce() results
+
+display(
 
     "average",
 
     `
-    <h2>${averageScore}%</h2>
+        <p><strong>Total Score:</strong> ${totalScore}</p>
 
-    <p>Total Score : ${totalScore}</p>
+        <p><strong>Average Score:</strong> ${averageScore}%</p>
 
-    <p>Highest Score : ${highestScore}</p>
+        <p><strong>Highest Score:</strong> ${highestScore}%</p>
 
-    <p>Lowest Score : ${lowestScore}</p>
-
+        <p><strong>Lowest Score:</strong> ${lowestScore}%</p>
     `
 
-); 
+);
 
 
-// ============================================
+// =========================
 // Dashboard Statistics
+// =========================
 
-document.getElementById("totalStudents").textContent =
-students.length;  
+document.getElementById("totalStudents").textContent = students.length;
 
-document.getElementById("passedCount").textContent =
-passedStudents.length;  
+document.getElementById("passedCount").textContent = passedStudents.length;
 
 document.getElementById("failedCount").textContent =
-students.length - passedStudents.length;
+    students.length - passedStudents.length;
 
 document.getElementById("averageScore").textContent =
-averageScore + "%";
+    `${averageScore}%`;
 
 
-
-
-// ============================================
+// =========================
 // splice()
-// Replace a Student
+// Replace one student
+// =========================
 
-students.splice(
+// Create a copy so the original students array
+// remains unchanged.
 
-    1,
+const updatedStudents = [...students];
 
-    1,
+updatedStudents.splice(1, 1, {
 
-    {
- 
-        name: "Amina",
+    name: "Musa",
 
-        department: "Cyber Security",
+    department: "Cyber Security",
 
-        score: 90
+    score: 90
 
-    }
+});
 
-); 
 
 let updatedHTML = "";
 
-students.forEach(student => {
+updatedStudents.forEach(student => {
 
     updatedHTML += `
 
         <p>
 
-        ✔ ${student.name}
+            <strong>${student.name}</strong>
 
-        - ${student.department}
+            (${student.department})
 
-        (${student.score})
+            - ${student.score}%
 
         </p>
 
-    `; 
+    `;
 
-});  
+});
+
 
 display("updated", updatedHTML);
 
 
-
-
-// ============================================
-// OBJECT MANIPULATION
-
+// =========================
+// Object Manipulation
+// =========================
 
 const intern = {
 
@@ -288,27 +360,63 @@ const intern = {
 };
 
 
-intern.level = 600;
+// Add a new property
+
+intern.level = 500;
+
+
+// Update an existing property
 
 intern.university = "Ahmadu Bello University";
+
+
+// Display in the browser console
+
+console.log("========== Object Manipulation ==========");
 
 console.log(intern);
 
 
+// =========================
+// Console Messages
+// =========================
 
+console.log("");
 
-// ============================================
-// Console Output
+console.log("========== Array Methods ==========");
 
-console.log("Company:", company);
+console.log("Original Students");
 
-console.log("Current Week:", week);  
+console.table(students);
 
-console.log("Students:", students);
+console.log("");
 
-console.log("Passed Students:", passedStudents);  
+console.log("Uppercase Names");
 
-console.log("Average Score:", averageScore);
+console.table(uppercaseStudents);
 
+console.log("");
 
+console.log("Passed Students");
+
+console.table(passedStudents);
+
+console.log("");
+
+console.log("Updated Student List");
   
+console.table(updatedStudents);
+
+console.log("");
+
+console.log(`Average Score: ${averageScore}%`);
+
+console.log("");   
+
+console.log("Dashboard Loaded Successfully.");  
+
+console.log("End of Week 1 Deliverable.");  
+
+
+
+
