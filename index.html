@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Management Dashboard</title>
+    <title>FlexiSAF Frontend Training Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -15,156 +15,192 @@
 
 <body>
 
-    <!-- ===========    HEADER   ================== -->
+    <!-- =======         PAGE HEADER   ============ -->
+ 
+    <header>  
 
-    <header> 
+        <div class="header-content">
 
-        <h1>🎓 Student Management Dashboard</h1>
+            <h1>🎓 FlexiSAF Frontend Training Dashboard</h1>
 
-        <p>
-            This wesite demonstrates Modern JavaScript (ES6+) Array Methods & Object Manipulation
-        </p>
+            <p>
+                Week 1 Deliverable  Demonstrating Modern JavaScript (ES6+) concepts,
+                object manipulation and common array methods.
+            </p>
+
+        </div>
+
 
     </header>
 
 
-    <!-- ==========   STATISTICS   =============== -->
+    <!-- =====================           DASHBOARD SUMMARy ================ -->
 
-    <section class="stats"> 
+    <section class="stats">
 
-        <div class="stat-card" >
+        <div class="stat-card">
 
-            <h3>Total Students </h3>
+            <h3>Total Students</h3>
 
             <h2 id="totalStudents">0</h2>
 
-        </div>
+        </div>  
+ 
+        <div class="stat-card">
 
-        <div class="stat-card"> 
-
-            <h3>Passed </h3>
+            <h3>Passed</h3>  
 
             <h2 id="passedCount">0</h2>
 
-        </div>
+
+        </div>  
+
+        <div class="stat-card">
+
+            <h3>Failed</h3>
+
+            <h2 id="failedCount">0</h2>
+ 
+        </div>  
 
         <div class="stat-card">  
 
-            <h3>Failed</h3>    
+            <h3>Average Score</h3> 
 
-            <h2 id="failedCount">0</h2>   
+            <h2 id="averageScore">0%</h2>  
+
+        </div> 
+
+    </section>  
+
+
+
+    <!-- =============       MAIN CONTENT  ========== -->
+
+    <main class="container">
+
+
+        <!-- ===========       STUDENTS  ======== -->
+
+        <section class="card large-card">
+
+            <h2>👨‍🎓 Student Records (forEach)</h2>  
+
+            <p class="section-note">
+                Every student object in the array is displayed below using
+                the <strong>forEach()</strong> method.
+            </p>  
+
+            <div id="students"></div>  
+
+        </section>  
+
+
+
+
+        <!-- =============         ARRAY METHODs ======= -->
+
+        <div class="small-cards">     
+
+
+            <!-- map() -->
+
+            <section class="card" >  
+
+                <h2>🔠 map()</h2>  
+
+                <p class="section-note">
+                    Converts each student's name into uppercase.
+                </p>  
+
+                <div id="uppercase"></div>  
+
+            </section>  
+
+
+
+            <!-- filter() -->
+
+            <section class="card">   
+
+                <h2>✅ filter()</h2>  
+
+                <p   class="section-note">
+                     Displays only students who scored 70 and above.
+                </p >
+
+                <div id="passed"></div> 
+
+            </section>
+
+
+
+
+
+            <!-- reduce()   -->   
+
+            <section class="card">   
+
+                <h2>📊 reduce()</h2>
+  
+                <p class="section-note">   
+                    Calculates useful class statistics such as the average score.
+                </p>  
+
+                <div id="average"></div>   
+
+            </section>  
+
+
+
+
+            <!-- splice() -->
+
+            <section class="card">
+
+                <h2>✏️ splice()</h2>   
+
+                <p class="section-note">  
+                    Replaces one student in the array and displays the updated list.
+                </p>  
+ 
+                <div id="updated"></div>  
+
+            </section>
 
         </div>
 
-        <div class="stat-card">  
-
-            <h3>Average Score</h3>   
-
-            <h2 id="averageScore">0%</h2>
-
-        </div>
-
-    </section>   
-
-
-    <!-- ==========      MAIN CONTENT    ============== -->
-
-    <main class="container"> 
-
-
-        <!-- Student Cards    -->
-
-        <section class="card">     
-
-            <h2>👨‍🎓 All Students  (forEach)</h2>   
-
-            <div id="students"></div>    
-
-        </section>    
-
-
-        <!-- map()   -->
-
-        <section class="card">
-
-            <h2>map()</h2>   
-
-            <p>
-                Here, student names are converted to uppercase.
-            </p>
-
-            <div id="uppercase"></div>     
-
-        </section>   
-
-
-        <!-- filter()      -->
-
-        <section class="card">
-
-            <h2>filter()</h2>  
-
-            <p>
-                Students who scored 70 and above.
-            </p>
-
-            <div id="passed"></div>  
-
-        </section>
-
-
-        <!-- reduce() -->
-
-        <section class="card">
-
-            <h2>reduce()</h2>
-
-            <p>
-                Class statistics generated using reduce().
-            </p>
-
-            <div id="average"></div>
-
-        </section>
-
-
-        <!-- splice() -->
-
-        <section class="card">
-
-            <h2>splice()</h2>
-
-            <p>
-                Updated student list after replacing one student.
-            </p>
-
-            <div id="updated"></div>
-
-        </section>
 
     </main>
 
 
-    <!-- ==============      FOOTER     =============== -->
+
+
+
+    <!-- ========            FOOTER     ============== -->
 
     <footer>
 
         <p>
+            Built with HTML5, CSS3 and Modern JavaScript (ES6+).
+        </p>
 
-            This website is built using HTML, CSS and Modern JavaScript (ES6)
-            Engr. U. A. Abubakar under the supervison of Mr Micheal O. O. (FlexiSAF) 2026.
-
-        </p> 
+        <p>
+            Developed by <strong>Engr. Umar Abubakar</strong> as part of the
+            FlexiSAF Frontend Development Training Programme (Week 1).
+        </p>
 
     </footer>
+
+
 
 
     <script src="script.js"></script>
 
 </body>
 
-</html>  
+</html>
 
 
 
-     
+
