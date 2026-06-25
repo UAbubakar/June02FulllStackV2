@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ===========    HEADER   ================== -->
+
+    <header> 
+
+        <h1>🎓 Student Management Dashboard</h1>
+
+        <p>
+            This wesite demonstrates Modern JavaScript (ES6+) Array Methods & Object Manipulation
+        </p>
+
+    </header>
+
+
+    <!-- ==========   STATISTICS   =============== -->
+
+    <section class="stats"> 
+
+        <div class="stat-card" >
+
+            <h3>Total Students </h3>
+
+            <h2 id="totalStudents">0</h2>
+
+        </div>
+
+        <div class="stat-card"> 
+
+            <h3>Passed </h3>
+
+            <h2 id="passedCount">0</h2>
+
+        </div>
+
+        <div class="stat-card">  
+
+            <h3>Failed</h3>    
+
+            <h2 id="failedCount">0</h2>   
+
+        </div>
+
+        <div class="stat-card">  
+
+            <h3>Average Score</h3>   
+
+            <h2 id="averageScore">0%</h2>
+
+        </div>
+
+    </section>   
+
+
+    <!-- ==========      MAIN CONTENT    ============== -->
+
+    <main class="container"> 
+
+
+        <!-- Student Cards    -->
+
+        <section class="card">     
+
+            <h2>👨‍🎓 All Students  (forEach)</h2>   
+
+            <div id="students"></div>    
+
+        </section>    
+
+
+        <!-- map()   -->
+
+        <section class="card">
+
+            <h2>map()</h2>   
+
+            <p>
+                Here, student names are converted to uppercase.
+            </p>
+
+            <div id="uppercase"></div>     
+
+        </section>   
+
+
+        <!-- filter()      -->
+
+        <section class="card">
+
+            <h2>filter()</h2>  
+
+            <p>
+                Students who scored 70 and above.
+            </p>
+
+            <div id="passed"></div>  
+
+        </section>
+
+
+        <!-- reduce() -->
+
+        <section class="card">
+
+            <h2>reduce()</h2>
+
+            <p>
+                Class statistics generated using reduce().
+            </p>
+
+            <div id="average"></div>
+
+        </section>
+
+
+        <!-- splice() -->
+
+        <section class="card">
+
+            <h2>splice()</h2>
+
+            <p>
+                Updated student list after replacing one student.
+            </p>
+
+            <div id="updated"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============      FOOTER     =============== -->
+
+    <footer>
+
+        <p>
+
+            This website is built using HTML, CSS and Modern JavaScript (ES6)
+            Engr. U. A. Abubakar under the supervison of Mr Micheal O. O. (FlexiSAF) 2026.
+
+        </p> 
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>  
+
+
+
+     
