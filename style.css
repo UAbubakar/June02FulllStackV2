@@ -1,361 +1,400 @@
-/* ======   GOOGLE FONT================== */
+/* ==========================   Google Font ==== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+      
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');   
 
+  
+/* ===================   General Reset================== */
 
-/* =================  CSS RESET  =================== */
-
-*{ 
-    margin:0;
-    padding:0;
-    box-sizing:border-box;  
+*{
+    margin: 0;
+    padding: 0;  
+    box-sizing: border-box;    
 }
 
 
-/* ==========================   BODY   ================= */
+/* ============================ Page Styling ========== */
 
 body{
 
-    font-family:'Poppins',sans-serif;  
+    font-family: "Poppins", sans-serif;
 
-    background:#f4f7fb;  
+    background-color: #f4f7fb;
 
-    color:#333;
+    color: #333;
 
-    line-height:1.6;  
+    line-height: 1.6;
 
 }
 
 
-
-
-/* ===============   HEADER   ========================== */
+/* ===============   Header   ================== */
 
 header{   
 
-    background:linear-gradient(135deg,#005bea,#00c6fb);
+    background: linear-gradient(135deg,#005bea,#00c6fb);     
 
-    color:white;  
+    color: white;
 
-    text-align:center;
+    padding: 50px 20px;    
 
-    padding:50px 20px;   
+    text-align: center;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
-
-}
-
-header h1{  
-
-    font-size:2.8rem;  
-
-    margin-bottom:10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
 
 }
 
-header p{ 
+  
+.header-content{
 
-    font-size:1.1rem;
- 
-}
+    max-width: 900px;    
 
-
-/* =====================   STATISTICS SECTION=== ================== */
-
-.stats{
-
-    width:90%;  
-
-    max-width:1200px;
-
-    margin:40px auto;  
-
-    display:flex;
-
-    gap:20px;  
-
-    justify-content:space-between;
-
-    flex-wrap:wrap;  
+    margin: auto;
 
 }
 
-.stat-card{  
+header h1{
 
-    flex:1;
+    font-size: 2.5rem;    
 
-    min-width:220px;  
+    margin-bottom: 10px;
+    
+}
 
-    background:white;
+header p{
 
-    padding:25px;  
+    font-size: 1rem;   
 
-    border-radius:15px;
+    opacity: .95;
 
-    text-align:center;   
+}     
+         
 
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
 
-    transition:.3s;  
+/* ==================   Statistics Section  ======================= */
+
+.stats{ 
+
+    width: 90%;
+
+    max-width: 1200px;    
+
+    margin: 35px auto;
+
+    display: flex;  
+
+    gap: 20px;
+
+    flex-wrap: wrap;  
+
+    justify-content: center;
+
+}
+
+    
+
+.stat-card{
+
+    background: white;  
+
+    flex: 1;
+
+    min-width: 220px;  
+
+    padding: 25px;
+
+    border-radius: 12px;   
+
+    text-align: center;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);   
+
+    transition: .25s;
 
 }
 
 .stat-card:hover{  
 
-    transform:translateY(-8px);
+    transform: translateY(-5px);
 
 }
 
-.stat-card h3{  
 
-    color:#666;
 
-    margin-bottom:10px;
+.stat-card h3{ 
+
+    color: #666;
+
+    margin-bottom: 8px;
+
+    font-weight: 500;
+
+}
+
+
+
+.stat-card h2{
+
+    color: #005bea;   
+
+    font-size: 2rem;
 
 }   
 
-.stat-card h2{  
-
-    color:#005bea;
-
-    font-size:2rem;  
-  
-}
 
 
-/* ========= MAIN CONTAINER=========================== */
+/* =========================   Main Container  =============== */
 
-.container{   
+.container{
 
-    width:90%;  
+    width: 90%;  
 
-    max-width:1200px;  
-
-    margin:auto;
-
-    display:flex;  
-
-    flex-wrap:wrap;
-
-    gap:25px;     
-
-    justify-content:center;
-
-}  
-
-
-/* ================  MAIN CARDS  ======================= */
-
-.card{  
-
-    width:350px;
-
-    background:white;
-
-    padding:25px;  
- 
-    border-radius:15px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.08);  
-
-    transition:.3s;
+    max-width: 1200px;  
    
-}
+    margin: auto;
 
-.card:hover{   
+}  
 
-    transform:translateY(-8px);  
+  
 
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
 
-}
+/* =================     Large Student Section  =================== */
 
-.card h2{   
-
-    color:#005bea;  
-
-    margin-bottom:15px;
-
-}   
-
-.card p{   
-
-    color:#666;
- 
-    margin-bottom:15px;
+.large-card{
+  
+    margin-bottom: 35px;
 
 }  
 
 
-/* ===============   STUDENT CARD  ======================= */
+/* ====================   General Card Styling ================= */
 
-.student-card{   
+.card{
 
-    background:#fafafa;
+    background: white;    
 
-    border-left:6px solid #005bea;  
+    padding: 25px;
 
-    padding:18px;
+    border-radius: 12px;   
 
-    margin-bottom:20px;   
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
 
-    border-radius:10px;
-    
+}
+
+.card h2{  
+
+    color: #005bea;  
+
+    margin-bottom: 10px;  
+
+}
+
+.section-note{
+
+    color: #666;  
+
+    margin-bottom: 20px;
+
+}  
+
+
+/* ====================   Student Grid================== */
+
+#students{
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+
+    gap: 20px;  
+
+}
+
+
+/* =================   Student Card  ==================== */
+
+.student-card{ 
+
+    background: #fafafa;
+
+    border-left: 5px solid #005bea;     
+
+    padding: 18px;
+
+    border-radius: 10px;  
+
+    transition: .25s;
+
+}
+
+.student-card:hover{
+
+    transform: translateY(-4px);   
+
 }
 
 .student-card h3{
 
-    color:#005bea;  
+    margin-bottom: 10px;   
 
-    margin-bottom:8px;
+    color: #005bea;  
 
-}  
+}
 
-.student-card p{  
+.student-card p{
 
-    margin-bottom:8px;
+    margin-bottom: 8px;   
 
-}   
+}
 
 
-/* =====================   PASS & FAIL BADGES ===================== */
+/* =================   Pass / Fail Badge ======================= */
 
 .pass{
 
-    display:inline-block;    
+    display: inline-block;
 
-    background:#2ecc71;
+    margin-top: 10px;    
 
-    color:white;    
+    padding: 6px 14px;
 
-    padding:6px 14px;
+    border-radius: 20px;  
 
-    border-radius:30px;
+    background: #2ecc71;
 
-    font-size:.85rem;    
+    color: white;
 
-    margin-top:8px;
+    font-size: .85rem;  
 
-}   
+}
 
-.fail{
+.fail{  
 
-    display:inline-block;   
+    display: inline-block;
 
-    background:#e74c3c;
+    margin-top: 10px;   
 
-    color:white;
+    padding: 6px 14px;
 
-    padding:6px 14px;  
+    border-radius: 20px;
 
-    border-radius:30px;
+    background: #e74c3c;   
+   
+    color: white;
 
-    font-size:.85rem;   
-
-    margin-top:8px;
-
-}   
-
-
-/* ================   PROGRESS BAR    ====================== */
-
-.progress{   
-
-    width:100%;
-
-    background:#ddd;  
-
-    border-radius:20px;
-
-    margin-top:12px;  
-
-    overflow:hidden;
+    font-size: .85rem;
 
 }  
+
+
+/* ==================   Progress Bar  ======================= */
+
+.progress{
+
+    margin-top: 15px;  
+
+    background: #ddd;
+
+    border-radius: 20px;   
+
+    overflow: hidden;
+
+}
 
 .progress-bar{  
 
-    height:14px;
+    height: 18px;
 
-    background:linear-gradient(90deg,#00c853,#64dd17);
+    background: linear-gradient(to right,#00c853,#64dd17);  
+
+    color: white;
+
+    text-align: center;  
+
+    font-size: .75rem;
+
+    line-height: 18px;  
+
+    font-weight: bold;
+
+}
+
+
+/* ===============   Small Cards Layout  ================== */
+
+.small-cards{  
+
+    display: grid;  
+
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));   
+
+    gap: 20px;
 
 }  
 
 
-/* ====================   ARRAY METHOD RESULTS   ========================== */
+   
+/* ===================  Array Method Output  ====================== */
 
 #uppercase,
 #passed,
 #average,
 #updated{
 
-    font-size:1rem;
+    margin-top: 15px;
 
-    line-height:2;
+    line-height: 1.8;
+
+}  
+  
+
+/* ================   Footer  ================ */
+
+footer{
+
+    margin-top: 50px;
+
+    padding: 25px;  
+
+    text-align: center;
+
+    background: #222;  
+
+    color: white;
 
 }  
 
+footer p{
 
-/* =================   FOOTER  ====================== */
-
-footer{ 
-
-    margin-top:60px;
-
-    background:#222;
-
-    color:white;
-
-    text-align:center;
-
-    padding:25px;
+    margin-bottom: 6px;
 
 }  
+ 
 
+   
+/* =================   Responsive Design ====================== */
 
-/* =================   RESPONSIVE DESIGN   ===================== */
-
-@media(max-width:1000px){
-
-    .stats{
-
-        justify-content:center;
-
-    } 
-
-}  
-
-
-@media(max-width:768px){
+@media (max-width:768px){
 
     header h1{
 
-        font-size:2rem;
-
-    }  
-
-    .container{
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }  
-
-    .card{
-
-        width:95%;
+        font-size: 2rem;
 
     }
+
+    .stats{
+
+        flex-direction: column;
+
+    } 
 
     .stat-card{
 
-        width:95%;
+        width: 100%;
 
-    }
+    }   
+
 
 }  
 
 
-   
-  
